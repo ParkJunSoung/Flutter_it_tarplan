@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
+import 'package:flutter_it_traplan/ui/my_plan/my_planer.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 
@@ -11,8 +12,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   static  List<Widget> _widgetOptions = <Widget>[
+    MyPlaner(),
     HomeDetilePage(),
-    Text('Profile'),
     Text('Profile'),
     Text('Profile'),
   ];
