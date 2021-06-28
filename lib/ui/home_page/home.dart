@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 
@@ -9,25 +10,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Profile',
-      style: optionStyle,
-    ),
+    Text('Profile'),
+    Text('Profile'),
+    Text('Profile'),
+    Text('Profile'),
   ];
 
   @override
@@ -35,15 +22,18 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
+        toolbarHeight: 100,
+        backgroundColor: const Color(0xffb3ea46),
         elevation: 20,
-        title: const Text('GoogleNavBar'),
+        title: Container(child: const Text('It TraPaln',style: TextStyle(fontSize: 30,fontFamily:'IndieFlower-Regular' ),)),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: const Color(0xffb3ea46),
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
@@ -66,20 +56,20 @@ class _HomeState extends State<Home> {
               color: Colors.black,
               tabs: [
                 GButton(
-                  icon: Icons.add,
-                  text: 'Home',
+                  icon: Icons.calendar_today,
+                  text: '계획표',
                 ),
                 GButton(
-                  icon: Icons.add,
-                  text: 'Likes',
+                  icon: Icons.home,
+                  text: '홈',
                 ),
                 GButton(
-                  icon: Icons.add,
-                  text: 'Search',
+                  icon: Icons.pin_drop,
+                  text: '내 주변 추천',
                 ),
                 GButton(
-                  icon: Icons.add,
-                  text: 'Profile',
+                  icon: Icons.favorite,
+                  text: '위시 리스트',
                 ),
               ],
               selectedIndex: _selectedIndex,
