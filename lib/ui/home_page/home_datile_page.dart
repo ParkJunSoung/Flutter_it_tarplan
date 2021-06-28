@@ -61,8 +61,13 @@ class HomeDetilePage extends StatelessWidget {
       child: Material(
         child: Column(
           children: [
-            SizedBox(
-              height: 100,
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage("https://wallpapercave.com/wp/wp3308218.jpg"),
+                    fit: BoxFit.cover),
+              ),
+              height: 200,
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 25),
@@ -93,7 +98,7 @@ class HomeDetilePage extends StatelessWidget {
                 items: imageSliders,
               ),
             ),
-            Text('추천여행지 '),
+            Text('추천여행지'),
             SizedBox(
               height: 200,
               child: ListView.builder(
