@@ -10,8 +10,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Profile'),
+  static  List<Widget> _widgetOptions = <Widget>[
+    HomeDetilePage(),
     Text('Profile'),
     Text('Profile'),
     Text('Profile'),
@@ -21,19 +21,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 100,
-        backgroundColor: const Color(0xffb3ea46),
-        elevation: 20,
-        title: Container(child: const Text('It TraPaln',style: TextStyle(fontSize: 30,fontFamily:'IndieFlower-Regular' ),)),
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   toolbarHeight: 100,
+      //   backgroundColor: const Color(0xffb3ea46),
+      //   elevation: 20,
+      //   title: Container(child: const Text('It TraPaln',style: TextStyle(fontSize: 30,fontFamily:'IndieFlower-Regular' ),)),
+      // ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: const Color(0xffb3ea46),
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,

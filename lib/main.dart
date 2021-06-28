@@ -18,11 +18,12 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider<TraplanProvider>(
               create: (_) => TraplanProvider()),
         ],child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomeDetilePage(),
+        home: Home(),
       ),
       );
     }

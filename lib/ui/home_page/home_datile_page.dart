@@ -59,115 +59,124 @@ class HomeDetilePage extends StatelessWidget {
     var list = context.read<TraplanProvider>();
     return SingleChildScrollView(
       child: Material(
-        child: Column(
+        child: Stack(
           children: [
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
+                  colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.75),BlendMode.dstATop),
                     image: NetworkImage("https://wallpapercave.com/wp/wp3308218.jpg"),
                     fit: BoxFit.cover),
               ),
-              height: 200,
+              height: 300,
             ),
+
             Padding(
-              padding: const EdgeInsets.only(bottom: 25),
-              child: Container(
-                color: Colors.white,
-                height: 50,
-                width: 370,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(20.0),
+              padding: const EdgeInsets.only(top: 100),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: Container(
+                      height: 50,
+                      width: 370,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+
+                            borderRadius: const BorderRadius.all(
+                              const Radius.circular(20.0),
+                            ),
+                          ),
+                          labelText: '🔎 Search',
+                        ),
                       ),
                     ),
-                    labelText: '🔎 Search',
                   ),
-                ),
-              ),
-            ),
-            Container(
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: true,
-                  scrollDirection: Axis.horizontal,
-                  autoPlay: true,
-                ),
-                items: imageSliders,
-              ),
-            ),
-            Text('추천여행지'),
-            SizedBox(
-              height: 200,
-              child: ListView.builder(
-                  itemCount: list.plants.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 200,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage("https://trendw.kr/wp-content/uploads/2018/12/travel.jpg"),
-                                    fit: BoxFit.cover),
+                  Container(
+                    child: CarouselSlider(
+                      options: CarouselOptions(
+                        aspectRatio: 2.0,
+                        enlargeCenterPage: true,
+                        scrollDirection: Axis.horizontal,
+                        autoPlay: true,
+                      ),
+                      items: imageSliders,
+                    ),
+                  ),
+                  Text('추천여행지'),
+                  SizedBox(
+                    height: 200,
+                    child: ListView.builder(
+                        itemCount: list.plants.length,
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    width: 200,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: NetworkImage("https://trendw.kr/wp-content/uploads/2018/12/travel.jpg"),
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                  Text('수원 '),
+                                ],
                               ),
                             ),
-                            Text('수원 '),
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
-            ),
-            Text('추천여행지 '),
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                  itemCount: list.plants.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    );
-                  }),
-            ),
-            Text('추천여행지 '),
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                  itemCount: list.plants.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    );
-                  }),
+                          );
+                        }),
+                  ),
+                  Text('추천여행지 '),
+                  SizedBox(
+                    height: 150,
+                    child: ListView.builder(
+                        itemCount: list.plants.length,
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                  Text('추천여행지 '),
+                  SizedBox(
+                    height: 150,
+                    child: ListView.builder(
+                        itemCount: list.plants.length,
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
