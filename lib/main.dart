@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_it_traplan/repository/repository.dart';
 import 'package:flutter_it_traplan/ui/home_page/home.dart';
+import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Home(),
+        home: HomeDetilePage(),
       ),
       );
     }
