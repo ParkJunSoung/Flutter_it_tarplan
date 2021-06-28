@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_it_traplan/ui/home.dart';
+import 'package:flutter_it_traplan/ui/home_page/home.dart';
+
 
 void main() {
   runApp(MyApp());
