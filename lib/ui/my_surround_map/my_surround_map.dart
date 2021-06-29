@@ -10,50 +10,69 @@ class MySurroundMap extends StatelessWidget {
         SizedBox(
           height: 80,
         ),
-        Container(
-          width: 300,
-          height: 50,
-          child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Hint',
-              )
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 300,
+            height: 50,
+            child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+
+                  ),
+                  labelText: 'Search',
+
+                )
+            ),
           ),
         ),
+
         Container(
           width: 360,
           height: 300,
           color: Colors.white,
           child: Text('지도'),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.red, // background
-                onPrimary: Colors.yellow, // foreground
+        Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white, // background
+                    onPrimary: Colors.black, // foreground
+                  ),
+                  onPressed: () {},
+                  child: Text('음식점'),
+                ),
               ),
-              onPressed: () {},
-              child: Text('음식점'),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.red, // background
-                onPrimary: Colors.yellow, // foreground
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white, // background
+                    onPrimary: Colors.black, // foreground
+                  ),
+                  onPressed: () {},
+                  child: Text('액티비티'),
+                ),
               ),
-              onPressed: () {},
-              child: Text('액티비티'),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.red, // background
-                onPrimary: Colors.yellow, // foreground
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white, // background
+                    onPrimary: Colors.black, // foreground
+                  ),
+                  onPressed: () {},
+                  child: Text('숙박'),
+                ),
               ),
-              onPressed: () {},
-              child: Text('숙박'),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
