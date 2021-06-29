@@ -32,6 +32,7 @@ dependencies:
   provider: ^5.0.0
   carousel_slider: ^4.0.0
   date_range_form_field: ^1.0.2
+  curved_navigation_bar: ^1.0.1
 
 dev_dependencies:
   flutter_test:
