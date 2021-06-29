@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
         letIndexChange: (index) => true,
       ),
       body: Container(
-        color: Colors.lightGreenAccent,
+        color: Colors.grey[100],
         child: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
