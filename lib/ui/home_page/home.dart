@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
+import 'package:flutter_it_traplan/ui/my_plan/my_plan_list.dart';
+
 import 'package:flutter_it_traplan/ui/my_plan/my_planer.dart';
+import 'package:flutter_it_traplan/ui/my_surround_map/my_surround_map.dart';
 import 'package:flutter_it_traplan/ui/my_wish_list/my_wish_list.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
 
 int _selectedIndex = 0;
 List<Widget> _widgetOptions = <Widget>[
-  MyPlaner(),
-  HomeDetilePage(),
-  Text('Profile'),
   MyWishList(),
-  Text('Profile'),
+  HomeDetilePage(),
+  MySurroundMap(),
+  MyPlanList(),
+  MyPlaner(),
 ];
 
 class Home extends StatefulWidget {
@@ -27,6 +30,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Center(child: Text('ItTraplan',style: TextStyle(fontSize: 30,fontFamily: 'Jua-Regular',),)),
+        backgroundColor: Colors.transparent,
+      ),
       extendBody: true,
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,

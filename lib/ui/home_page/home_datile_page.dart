@@ -67,8 +67,8 @@ class HomeDetilePage extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    // colorFilter: ColorFilter.mode(
-                    //     Colors.black.withOpacity(0.75), BlendMode.dstATop),
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.85), BlendMode.dstATop),
                     image: NetworkImage(
                         "https://wallpapercave.com/wp/wp3308218.jpg"),
                     fit: BoxFit.cover),
