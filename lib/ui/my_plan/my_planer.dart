@@ -18,7 +18,7 @@ class MyPlaner extends StatelessWidget {
                       image: new DecorationImage(
                           fit: BoxFit.fill,
                           image: new NetworkImage(
-                              "https://i.imgur.com/BoN9kdC.png")
+                              "https://www.constimes.co.kr/news/photo/201908/208232_31017_2144.jpg")
                       )
                   )),
               Row(
