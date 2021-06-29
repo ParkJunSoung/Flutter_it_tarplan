@@ -4,7 +4,7 @@ import 'package:flutter_it_traplan/repository/repository.dart';
 import 'package:provider/provider.dart';
 
 final List<String> imgList = [
-  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
+  'https://scontent-ssn1-1.xx.fbcdn.net/v/t31.18172-0/p600x600/10974255_390336847815751_2466507427795532636_o.jpg?_nc_cat=110&ccb=1-3&_nc_sid=730e14&_nc_ohc=4lXNsU2_p4EAX9aAZjj&_nc_ht=scontent-ssn1-1.xx&tp=6&oh=34f3b371cf0d3b8a94d6b8f6074d026b&oe=60DF50AF',
   'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
   'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
   'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
@@ -59,115 +59,148 @@ class HomeDetilePage extends StatelessWidget {
     var list = context.read<TraplanProvider>();
     return SingleChildScrollView(
       child: Material(
-        child: Column(
+        child: Stack(
           children: [
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage("https://wallpapercave.com/wp/wp3308218.jpg"),
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.75), BlendMode.dstATop),
+                    image: NetworkImage(
+                        "https://wallpapercave.com/wp/wp3308218.jpg"),
                     fit: BoxFit.cover),
               ),
-              height: 200,
+              height: 300,
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 25),
-              child: Container(
-                color: Colors.white,
-                height: 50,
-                width: 370,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(20.0),
-                      ),
-                    ),
-                    labelText: '🔎 Search',
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: true,
-                  scrollDirection: Axis.horizontal,
-                  autoPlay: true,
-                ),
-                items: imageSliders,
-              ),
-            ),
-            Text('추천여행지'),
-            SizedBox(
-              height: 200,
-              child: ListView.builder(
-                  itemCount: list.plants.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 200,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage("https://trendw.kr/wp-content/uploads/2018/12/travel.jpg"),
-                                    fit: BoxFit.cover),
+              padding: const EdgeInsets.only(top: 100),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 25),
+                      child: Container(
+                        height: 50,
+                        width: 370,
+                        child: TextField(
+                          style: TextStyle(color: Colors.black),
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: const BorderRadius.all(
+                                const Radius.circular(20.0),
                               ),
                             ),
-                            Text('수원 '),
-                          ],
+                            labelText: '🔎 Search',
+                            labelStyle: TextStyle(
+                                fontFamily: 'Jua-Regular', fontSize: 20),
+                          ),
                         ),
                       ),
-                    );
-                  }),
-            ),
-            Text('추천여행지 '),
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                  itemCount: list.plants.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(20),
+                    ),
+                    Container(
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          aspectRatio: 2.0,
+                          enlargeCenterPage: true,
+                          scrollDirection: Axis.horizontal,
+                          autoPlay: true,
                         ),
+                        items: imageSliders,
                       ),
-                    );
-                  }),
-            ),
-            Text('추천여행지 '),
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                  itemCount: list.plants.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 150,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    );
-                  }),
+                    ),
+                    Text(
+                      '추천여행지',
+                      style: TextStyle(fontFamily: 'Jua-Regular', fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                          itemCount: list.plants.length,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Card(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: 200,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                                "https://trendw.kr/wp-content/uploads/2018/12/travel.jpg"),
+                                            fit: BoxFit.cover),
+                                      ),
+                                    ),
+                                    Text(
+                                      '수원',
+                                      style: TextStyle(
+                                          fontFamily: 'Jua-Regular',
+                                          fontSize: 20),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          }),
+                    ),
+                    Text(
+                      '추천여행지',
+                      style: TextStyle(fontFamily: 'Jua-Regular', fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 150,
+                      child: ListView.builder(
+                          itemCount: list.plants.length,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            );
+                          }),
+                    ),
+                    Text(
+                      '추천여행지',
+                      style: TextStyle(fontFamily: 'Jua-Regular', fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 150,
+                      child: ListView.builder(
+                          itemCount: list.plants.length,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            );
+                          }),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),

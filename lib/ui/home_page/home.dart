@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
+import 'package:flutter_it_traplan/ui/my_plan/my_planer.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 
@@ -10,9 +11,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Profile'),
-    Text('Profile'),
+  static  List<Widget> _widgetOptions = <Widget>[
+    MyPlaner(),
+    HomeDetilePage(),
     Text('Profile'),
     Text('Profile'),
   ];
@@ -21,19 +22,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        toolbarHeight: 100,
-        backgroundColor: const Color(0xffb3ea46),
-        elevation: 20,
-        title: Container(child: const Text('It TraPaln',style: TextStyle(fontSize: 30,fontFamily:'IndieFlower-Regular' ),)),
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   toolbarHeight: 100,
+      //   backgroundColor: const Color(0xffb3ea46),
+      //   elevation: 20,
+      //   title: Container(child: const Text('It TraPaln',style: TextStyle(fontSize: 30,fontFamily:'IndieFlower-Regular' ),)),
+      // ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: const Color(0xffb3ea46),
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
