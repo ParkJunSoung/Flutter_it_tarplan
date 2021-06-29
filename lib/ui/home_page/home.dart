@@ -6,12 +6,14 @@ import 'package:flutter_it_traplan/ui/my_plan/my_plan_list.dart';
 import 'package:flutter_it_traplan/ui/my_plan/my_planer.dart';
 import 'package:flutter_it_traplan/ui/my_surround_map/my_surround_map.dart';
 import 'package:flutter_it_traplan/ui/my_wish_list/my_wish_list.dart';
+import 'package:flutter_it_traplan/ui/tutorial/tutorial.dart';
+import 'package:flutter_it_traplan/ui/tutorial/tutorial_ditail1.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
 
 int _selectedIndex = 0;
 List<Widget> _widgetOptions = <Widget>[
-  MyWishList(),
+  MyPlanList(),
   HomeDetilePage(),
   MySurroundMap(),
   MyPlanList(),
@@ -34,6 +36,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Center(child: Text('ItTraplan',style: TextStyle(fontSize: 30,fontFamily: 'Jua-Regular',),)),
         backgroundColor: Colors.transparent,
+        elevation: 3,
       ),
       extendBody: true,
       bottomNavigationBar: CurvedNavigationBar(

@@ -65,15 +65,18 @@ class HomeDetilePage extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.85), BlendMode.dstATop),
-                    image: NetworkImage(
-                        "https://wallpapercave.com/wp/wp3308218.jpg"),
-                    fit: BoxFit.cover),
-              ),
               height: 300,
+              decoration: BoxDecoration(
+              //   color: Colors.grey[300],
+              //   image: DecorationImage(
+              //       colorFilter: ColorFilter.mode(
+              //           Colors.black.withOpacity(0.85), BlendMode.dstATop),
+              //       image: NetworkImage(
+              //           "https://wallpapercave.com/wp/wp3308218.jpg"),
+              //       fit: BoxFit.cover),
+              // ),
+
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 100),
@@ -93,7 +96,6 @@ class HomeDetilePage extends StatelessWidget {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-
                               borderRadius: const BorderRadius.all(
                                 const Radius.circular(20.0),
                               ),

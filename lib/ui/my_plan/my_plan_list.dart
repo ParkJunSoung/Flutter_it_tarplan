@@ -10,18 +10,8 @@ class MyPlanList extends StatefulWidget {
 class _MyPlanListState extends State<MyPlanList> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Column(
-            children: [
-              Icon(Icons.add_chart),
-              Text("Plan List"),
-            ],
-          ),
-        ),
-        Container(
-          child: GridView.builder(
+    return
+          GridView.builder(
             itemCount: 10,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -30,33 +20,41 @@ class _MyPlanListState extends State<MyPlanList> {
               childAspectRatio: 3 / 2,
             ),
             itemBuilder: (BuildContext content, int index) {
-              return Container (
-                child: Column(
-                  children: [
-                    Text("image"),
-                    Text("여행"),
-                    Row(
+              return Column(
+                children: [
+                  Card(
+                    child: Column(
                       children: [
                         Container(
                           width: 200,
-                          height: 200,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: NetworkImage('https://googleflutter.com/sample_image.jpg'),
-                                fit: BoxFit.fill
+                          height: 70,
+                      decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          image: DecorationImage(
+                              colorFilter: ColorFilter.mode(
+                                  Colors.black.withOpacity(0.85), BlendMode.dstATop),
+                              image: NetworkImage(
+                                  "https://wallpapercave.com/wp/wp3308218.jpg"),
+                              fit: BoxFit.cover),
+                        ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('○○ 일정'),
                             ),
-                          ),
+                            IconButton(onPressed: (){}, icon: Icon(Icons.favorite))
+                          ],
                         ),
                       ],
-                    )
-                  ],
-                ),
+                    ),
+                  ),
+
+                ],
               );
             },
-          ),
-        ),
-      ],
-    );
+          );
   }
 }
