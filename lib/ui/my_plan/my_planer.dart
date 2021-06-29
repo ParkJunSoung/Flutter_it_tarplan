@@ -29,17 +29,18 @@ class MyPlaner extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("여행 이름",
+                          Text("속초 여행",
                               textScaleFactor: 1.5),
                           Padding(
                             padding: const EdgeInsets.only(left:20.0),
                             child: ElevatedButton(onPressed: (){},
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.grey[300],),
                               child: Icon(Icons.pin_drop_outlined),),
                           ),
                         ],
                       ),
-                      Text("여행 일자",
-                          textScaleFactor: 1.5),
+                      Text("여행 일자 2020.08.07 ~ 12",style: TextStyle(fontSize: 13),),
                     ],
                   ),
                 ),
@@ -53,11 +54,11 @@ class MyPlaner extends StatelessWidget {
                             height: 30,
                             child: TextButton(
                               onPressed: (){},
-                              child: Text("멤버추가", style: TextStyle(fontSize: 11),),
-                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.lightGreen),
+                              child: Text("멤버추가", style: TextStyle(fontSize: 13,color: Colors.white),),
+                              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey[300]),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15.0),
+                                    borderRadius: BorderRadius.circular(13.0),
                                   ),
                                 ),
                               ),
@@ -69,8 +70,8 @@ class MyPlaner extends StatelessWidget {
                               height: 30,
                               child: TextButton(
                                 onPressed: (){},
-                                child: Text("일정공유",  style: TextStyle(fontSize: 11),),
-                                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.lightGreen),
+                                child: Text("일정공유",  style: TextStyle(fontSize: 13,color: Colors.white),),
+                                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.grey[300]),
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15.0),
@@ -137,7 +138,7 @@ class MyPlaner extends StatelessWidget {
         Container(
           height: 70,
           decoration: new BoxDecoration(
-              color: Colors.green,
+              color: Colors.grey[300],
               borderRadius: new BorderRadius.only(
                 topLeft: const Radius.circular(40.0),
                 topRight: const Radius.circular(40.0),

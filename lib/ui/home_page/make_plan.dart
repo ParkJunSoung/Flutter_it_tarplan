@@ -18,19 +18,46 @@ class _MakePlanState extends State<MakePlan> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("일정이름"),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: '일정 이름을 입력하세요'
+          SizedBox(
+            height: 90,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("일정이름"),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                border:OutlineInputBorder(
+              borderRadius: const BorderRadius.all(
+              const Radius.circular(20.0),
+            ),
+      ),
+                  labelText: '일정 이름을 입력하세요'
+              ),
+
             ),
           ),
-          Text("선택된 지역"),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: '일정 이름을 입력하세요'
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("선택된 지역"),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(20.0),
+                    ),
+                  ),
+                  labelText: '일정 이름을 입력하세요'
+              ),
             ),
           ),
           TextButton(

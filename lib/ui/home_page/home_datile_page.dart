@@ -67,7 +67,7 @@ class HomeDetilePage extends StatelessWidget {
             Container(
               height: 300,
               decoration: BoxDecoration(
-              //   color: Colors.grey[300],
+                color: Colors.grey[500],
               //   image: DecorationImage(
               //       colorFilter: ColorFilter.mode(
               //           Colors.black.withOpacity(0.85), BlendMode.dstATop),

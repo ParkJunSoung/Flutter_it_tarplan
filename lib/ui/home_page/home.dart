@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
 import 'package:flutter_it_traplan/ui/my_plan/my_plan_list.dart';
-
-import 'package:flutter_it_traplan/ui/my_plan/my_planer.dart';
 import 'package:flutter_it_traplan/ui/my_surround_map/my_surround_map.dart';
 import 'package:flutter_it_traplan/ui/my_wish_list/my_wish_list.dart';
-import 'package:flutter_it_traplan/ui/tutorial/tutorial.dart';
-import 'package:flutter_it_traplan/ui/tutorial/tutorial_ditail1.dart';
+import 'package:flutter_it_traplan/ui/home_page/make_plan.dart';
+
+import 'make_plan.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
 
@@ -16,8 +15,8 @@ List<Widget> _widgetOptions = <Widget>[
   MyPlanList(),
   HomeDetilePage(),
   MySurroundMap(),
-  MyPlanList(),
-  MyPlaner(),
+  MyWishList(),
+  MakePlan(),
 ];
 
 class Home extends StatefulWidget {

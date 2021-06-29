@@ -5,43 +5,51 @@ class MyWishList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Column(
-            children: [
-              Icon(Icons.add_chart),
-              Text("Wish List"),
-            ],
-          ),
+    return
+      GridView.builder(
+        itemCount: 10,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 3 / 2,
         ),
-        Container(
-          child: GridView.builder(
-            itemCount: 10,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 3 / 2,
-              ),
-              itemBuilder: (BuildContext content, int index) {
-              return Container (
+        itemBuilder: (BuildContext content, int index) {
+          return Column(
+            children: [
+              Card(
                 child: Column(
                   children: [
-                    Text("data"),
+                    Container(
+                      width: 200,
+                      height: 70,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.85), BlendMode.dstATop),
+                            image: NetworkImage(
+                                "https://wallpapercave.com/wp/wp3308218.jpg"),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("data"),
-                        Icon(Icons.add_shopping_cart),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('○○ 일정'),
+                        ),
+                        IconButton(onPressed: (){}, icon: Icon(Icons.favorite))
                       ],
-                    )
+                    ),
                   ],
                 ),
-              );
-              },
-          ),
-        ),
-      ],
-    );
+              ),
+
+            ],
+          );
+        },
+      );
   }
 }
