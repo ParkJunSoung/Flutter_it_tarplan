@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_it_traplan/repository/repository.dart';
 import 'package:provider/provider.dart';
 
+
 final List<String> imgList = [
   'https://scontent-ssn1-1.xx.fbcdn.net/v/t31.18172-0/p600x600/10974255_390336847815751_2466507427795532636_o.jpg?_nc_cat=110&ccb=1-3&_nc_sid=730e14&_nc_ohc=4lXNsU2_p4EAX9aAZjj&_nc_ht=scontent-ssn1-1.xx&tp=6&oh=34f3b371cf0d3b8a94d6b8f6074d026b&oe=60DF50AF',
   'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
@@ -11,6 +12,8 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
 ];
+
+
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
           child: Container(
