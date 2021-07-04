@@ -17,16 +17,11 @@ class MySurroundMap extends StatelessWidget {
             height: 50,
             child: TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
-
-                  ),
-                  labelText: 'Search',
-
-                )
-            ),
+              border: OutlineInputBorder(),
+              labelText: 'Search',
+            )),
           ),
         ),
-
         Container(
           width: 360,
           height: 300,

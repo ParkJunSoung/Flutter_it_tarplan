@@ -20,7 +20,6 @@ void main() {
     var response = await http. get (uri);
     expect(response.statusCode, 200);
     Model result = Model.fromJson(json.decode(response.body));
-    // expect(result.response.body, '2021-07-03');
 
 
   });
