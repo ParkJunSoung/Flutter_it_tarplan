@@ -5,44 +5,43 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:flutter/material.dart';
-import 'map_view.dart';
-import 'map_click.dart';
-import 'map_coordinates.dart';
-import 'page.dart';
-import 'place_marker.dart';
+import 'package:flutter_kakao_map/flutter_kakao_map.dart';
+import 'package:flutter_kakao_map/kakao_maps_flutter_platform_interface.dart';
 
-final List<KakaoMapExampleAppPage> _allPages = <KakaoMapExampleAppPage>[
-  MapViewPage(),
-  MapCoordinatesPage(),
-  MapClickPage(),
-  PlaceMarkerPage(),
-];
+class MyAppOne extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-class MapsDemo extends StatelessWidget {
-  void _pushPage(BuildContext context, KakaoMapExampleAppPage page) {
-    Navigator.of(context).push(MaterialPageRoute<void>(
-        builder: (_) => Scaffold(
-          appBar: AppBar(title: Text(page.title)),
-          body: page,
-        )));
+class _MyAppState extends State<MyAppOne> {
+  late KakaoMapController mapController;
+  MapPoint _visibleRegion = MapPoint(37.5087553, 127.0632877);
+  CameraPosition _kInitialPosition =
+  CameraPosition(target: MapPoint(37.5087553, 127.0632877), zoom: 5);
+
+  void onMapCreated(KakaoMapController controller) async {
+    final MapPoint visibleRegion = await controller.getMapCenterPoint();
+    setState(() {
+      mapController = controller;
+      _visibleRegion = visibleRegion;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('KakaoMaps examples')),
-      body: ListView.builder(
-        itemCount: _allPages.length,
-        itemBuilder: (_, int index) => ListTile(
-          leading: _allPages[index].leading,
-          title: Text(_allPages[index].title),
-          onTap: () => _pushPage(context, _allPages[index]),
-        ),
+      appBar: AppBar(title: const Text('Flutter KakaoMap example')),
+      body: Column(
+        children: [
+          Center(
+              child: SizedBox(
+                  width: 500.0,
+                  height: 500.0,
+                  child: KakaoMap(
+                      onMapCreated: onMapCreated,
+                      initialCameraPosition: _kInitialPosition)))
+        ],
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(home: MapsDemo()));
 }
