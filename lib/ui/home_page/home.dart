@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_it_traplan/ui/home_page/home_datile_page.dart';
 import 'package:flutter_it_traplan/ui/my_plan/my_plan_list.dart';
-import 'package:flutter_it_traplan/ui/my_surround_map/kakao_map.dart';
+import 'package:flutter_it_traplan/ui/my_surround_map/google_map.dart';
 import 'package:flutter_it_traplan/ui/my_surround_map/my_surround_map.dart';
 import 'package:flutter_it_traplan/ui/my_wish_list/my_wish_list.dart';
 import 'package:flutter_it_traplan/ui/home_page/make_plan.dart';
@@ -15,7 +15,7 @@ int _selectedIndex = 0;
 List<Widget> _widgetOptions = <Widget>[
   MyPlanList(),
   HomeDetilePage(),
-  MyAppOne(),
+  GoogleMap(),
   MyWishList(),
   MakePlan(),
 ];
