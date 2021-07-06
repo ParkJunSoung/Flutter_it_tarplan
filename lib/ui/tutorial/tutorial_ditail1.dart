@@ -8,12 +8,23 @@ class TutorialDetail1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.network("https://trendw.kr/wp-content/uploads/2018/12/travel.jpg"),
-        Text('Food',style: TextStyle(fontSize: 30,fontFamily: 'Jua-Regular',),),
-        Text('여행왔는데뭐먹지?!',style:TextStyle(fontSize: 20,fontFamily: 'Jua-Regular')),
-        ElevatedButton(onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => TutorialDetail2()));
-        }, child: Text('NEXT')),
+        Image.network(
+            "https://trendw.kr/wp-content/uploads/2018/12/travel.jpg"),
+        Text(
+          'Food',
+          style: TextStyle(
+            fontSize: 30,
+            fontFamily: 'Jua-Regular',
+          ),
+        ),
+        Text('여행왔는데뭐먹지?!',
+            style: TextStyle(fontSize: 20, fontFamily: 'Jua-Regular')),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => TutorialDetail2()));
+            },
+            child: Text('NEXT')),
       ],
     );
   }

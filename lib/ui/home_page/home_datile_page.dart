@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_it_traplan/repository/repository.dart';
 import 'package:provider/provider.dart';
 
-
 final List<String> imgList = [
   'https://cdn.univ20.com/wp-content/uploads/2017/01/12c0da031e7fa0520fd77f4108db72fa.png',
   'https://cdn.univ20.com/wp-content/uploads/2017/01/534ac95b4bd2d1ffde0bd61529383fed.png',
@@ -12,7 +11,6 @@ final List<String> imgList = [
   'https://cdn.univ20.com/wp-content/uploads/2017/01/a0e5aa868c527defe6b1ef88c419ecd7.png',
   'https://cdn.univ20.com/wp-content/uploads/2017/01/d77087cef796d08f198edc82241739b9.png'
 ];
-
 
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
@@ -68,14 +66,13 @@ class HomeDetilePage extends StatelessWidget {
               height: 300,
               decoration: BoxDecoration(
                 color: Colors.grey[500],
-              //   image: DecorationImage(
-              //       colorFilter: ColorFilter.mode(
-              //           Colors.black.withOpacity(0.85), BlendMode.dstATop),
-              //       image: NetworkImage(
-              //           "https://wallpapercave.com/wp/wp3308218.jpg"),
-              //       fit: BoxFit.cover),
-              // ),
-
+                //   image: DecorationImage(
+                //       colorFilter: ColorFilter.mode(
+                //           Colors.black.withOpacity(0.85), BlendMode.dstATop),
+                //       image: NetworkImage(
+                //           "https://wallpapercave.com/wp/wp3308218.jpg"),
+                //       fit: BoxFit.cover),
+                // ),
               ),
             ),
             Padding(
@@ -204,7 +201,7 @@ class HomeDetilePage extends StatelessWidget {
                             );
                           }),
                     ),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+                    IconButton(onPressed: () {}, icon: Icon(Icons.add)),
                   ],
                 ),
               ),

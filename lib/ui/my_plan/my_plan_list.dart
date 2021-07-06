@@ -31,8 +31,7 @@ class _MyPlanListState extends State<MyPlanList> {
                     color: Colors.grey[300],
                     image: DecorationImage(
                         colorFilter: ColorFilter.mode(
-                            Colors.black.withOpacity(0.85),
-                            BlendMode.dstATop),
+                            Colors.black.withOpacity(0.85), BlendMode.dstATop),
                         image: NetworkImage(
                             "https://wallpapercave.com/wp/wp3308218.jpg"),
                         fit: BoxFit.cover),
@@ -48,7 +47,6 @@ class _MyPlanListState extends State<MyPlanList> {
                     IconButton(onPressed: () {}, icon: Icon(Icons.favorite))
                   ],
                 ),
-
               ],
             ),
           );
