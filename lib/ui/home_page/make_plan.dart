@@ -40,8 +40,7 @@ class _MakePlanState extends State<MakePlan> {
                       const Radius.circular(20.0),
                     ),
                   ),
-                  labelText: '일정 이름을 입력하세요'
-              ),
+                  labelText: '일정 이름을 입력하세요'),
             ),
           ),
           Padding(
@@ -57,8 +56,7 @@ class _MakePlanState extends State<MakePlan> {
                       const Radius.circular(20.0),
                     ),
                   ),
-                  labelText: '일정 이름을 입력하세요'
-              ),
+                  labelText: '일정 이름을 입력하세요'),
             ),
           ),
           TextButton(
@@ -108,10 +106,12 @@ class _MakePlanState extends State<MakePlan> {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Text("멤버 초대하기 복사"),),
+            child: Text("멤버 초대하기 복사"),
+          ),
           ElevatedButton(
             onPressed: () {},
-            child: Text("저장하기"),),
+            child: Text("저장하기"),
+          ),
         ],
       ),
     );

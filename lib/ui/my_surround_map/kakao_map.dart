@@ -17,7 +17,7 @@ class _MyAppState extends State<MyAppOne> {
   late KakaoMapController mapController;
   MapPoint _visibleRegion = MapPoint(37.5087553, 127.0632877);
   CameraPosition _kInitialPosition =
-  CameraPosition(target: MapPoint(37.5087553, 127.0632877), zoom: 5);
+      CameraPosition(target: MapPoint(37.5087553, 127.0632877), zoom: 5);
 
   void onMapCreated(KakaoMapController controller) async {
     final MapPoint visibleRegion = await controller.getMapCenterPoint();

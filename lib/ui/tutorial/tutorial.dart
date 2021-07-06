@@ -13,8 +13,7 @@ class Tutorial extends StatefulWidget {
 
 class _TutorialState extends State<Tutorial> {
   final PageController controller = PageController();
-  final ButtonStyle style =
-  ElevatedButton.styleFrom();
+  final ButtonStyle style = ElevatedButton.styleFrom();
   int _currentPageIndex = 0;
 
   var pageList = [
@@ -24,6 +23,7 @@ class _TutorialState extends State<Tutorial> {
   ];
 
   var buttonText = 'Next';
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,7 +33,7 @@ class _TutorialState extends State<Tutorial> {
             child: Container(
               color: Colors.white,
               child: PageView.builder(
-                physics:new NeverScrollableScrollPhysics(),
+                physics: new NeverScrollableScrollPhysics(),
                 onPageChanged: (int index) {
                   setState(() {
                     _currentPageIndex = index % (pageList.length);
@@ -52,8 +52,9 @@ class _TutorialState extends State<Tutorial> {
             children: [
               ElevatedButton(
                 onPressed: previousPage,
-                child: Text('Previous',
-                  style: TextStyle(color: Colors.purple,fontSize: 20),
+                child: Text(
+                  'Previous',
+                  style: TextStyle(color: Colors.purple, fontSize: 20),
                 ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white.withOpacity(1.0),
@@ -66,13 +67,13 @@ class _TutorialState extends State<Tutorial> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right:8.0),
+                padding: const EdgeInsets.only(right: 8.0),
                 child: ElevatedButton(
-                  onPressed: (){
+                  onPressed: () {
                     setState(() {
-                      if (_currentPageIndex == pageList.length -2){
+                      if (_currentPageIndex == pageList.length - 2) {
                         buttonText = "Done";
-                      }else if (_currentPageIndex != pageList.length -2){
+                      } else if (_currentPageIndex != pageList.length - 2) {
                         buttonText = "Next";
                       }
                       nextPage();
@@ -81,8 +82,9 @@ class _TutorialState extends State<Tutorial> {
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white.withOpacity(1.0),
                   ),
-                  child: Text(buttonText,
-                    style: TextStyle(color: Colors.purple,fontSize: 20),
+                  child: Text(
+                    buttonText,
+                    style: TextStyle(color: Colors.purple, fontSize: 20),
                   ),
                 ),
               )
@@ -92,26 +94,22 @@ class _TutorialState extends State<Tutorial> {
       ],
     );
   }
-void nextPage(){
-  if (_currentPageIndex == pageList.length -1 ){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Home()),
-    );
+
+  void nextPage() {
+    if (_currentPageIndex == pageList.length - 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    }
+    controller.animateToPage(controller.page!.toInt() + 1,
+        duration: Duration(milliseconds: 200), curve: Curves.easeIn);
   }
-  controller.animateToPage(controller.page!.toInt() + 1,
-      duration: Duration(milliseconds: 200),
-      curve: Curves.easeIn
-  );
-}
 
-void previousPage(){
-
-  controller.animateToPage(controller.page!.toInt() -1,
-      duration: Duration(milliseconds: 200),
-      curve: Curves.easeIn
-  );
- }
+  void previousPage() {
+    controller.animateToPage(controller.page!.toInt() - 1,
+        duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+  }
 }
 
 class Indicator extends StatelessWidget {
@@ -128,7 +126,6 @@ class Indicator extends StatelessWidget {
 
   Widget _buildIndicator(
       int index, int pageCount, double dotSize, double spacing) {
-
     bool isCurrentPageSelected = index ==
         (controller.page != null ? controller.page!.round() % pageCount : 0);
 
@@ -147,6 +144,7 @@ class Indicator extends StatelessWidget {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return new Row(
