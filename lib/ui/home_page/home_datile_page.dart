@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_it_traplan/repository/tour_repository.dart';
+import 'package:flutter_it_traplan/repository/course_repository.dart';
+
 import 'package:provider/provider.dart';
 
 final List<String> imgList = [
@@ -122,7 +123,7 @@ class HomeDetilePage extends StatelessWidget {
                     SizedBox(
                       height: 200,
                       child: ListView.builder(
-                          itemCount: list.plants.length,
+                          itemCount: list.result.response!.body!.items!.item!.length,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (BuildContext context, int index) {
@@ -160,7 +161,7 @@ class HomeDetilePage extends StatelessWidget {
                     SizedBox(
                       height: 150,
                       child: ListView.builder(
-                          itemCount: list.plants.length,
+                          itemCount: list.result.response!.body!.items!.item!.length,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (BuildContext context, int index) {
@@ -184,7 +185,7 @@ class HomeDetilePage extends StatelessWidget {
                     SizedBox(
                       height: 150,
                       child: ListView.builder(
-                          itemCount: list.plants.length,
+                          itemCount: list.result.response!.body!.items!.item!.length,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (BuildContext context, int index) {

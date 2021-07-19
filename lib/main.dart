@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_it_traplan/repository/course_repository.dart';
 import 'package:flutter_it_traplan/repository/tour_repository.dart';
 import 'package:flutter_it_traplan/ui/home_page/home.dart';
 import 'package:provider/provider.dart';
