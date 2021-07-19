@@ -16,7 +16,7 @@ import 'package:flutter_it_traplan/main.dart';
 void main() {
   test('http 통신 테스트', () async {
     var uri = Uri.parse(
-        'http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=CyYn3fG0Snjyp69ua9B6jSccKH4gmHWKlSKfexlPNWnBa8C0UhTsrDVA%2BOOHFbaIiZH1MS%2BW%2BScRslyF3KBDUg%3D%3D&numOfRows=10&MobileOS=ETC&MobileApp=TestApp&_type=json');
+        'http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=CyYn3fG0Snjyp69ua9B6jSccKH4gmHWKlSKfexlPNWnBa8C0UhTsrDVA%2BOOHFbaIiZH1MS%2BW%2BScRslyF3KBDUg%3D%3D&contentTypeId=12&areaCode=&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=TestApp&_type=json');
     var response = await http. get (uri);
     expect(response.statusCode, 200);
     Model result = Model.fromJson(json.decode(response.body));
