@@ -168,7 +168,7 @@ class Item {
   String? _firstimage;
   String? _firstimage2;
   double? _mapx;
-  String? _mapy;
+  double? _mapy;
   int? _mlevel;
   int? _modifiedtime;
   int? _readcount;
@@ -187,7 +187,7 @@ class Item {
   String? get firstimage => _firstimage;
   String? get firstimage2 => _firstimage2;
   double? get mapx => _mapx;
-  String? get mapy => _mapy;
+  double? get mapy => _mapy;
   int? get mlevel => _mlevel;
   int? get modifiedtime => _modifiedtime;
   int? get readcount => _readcount;
@@ -207,7 +207,7 @@ class Item {
       String? firstimage, 
       String? firstimage2, 
       double? mapx, 
-      String? mapy, 
+      double? mapy,
       int? mlevel, 
       int? modifiedtime, 
       int? readcount, 
@@ -245,8 +245,16 @@ class Item {
     _createdtime = json["createdtime"];
     _firstimage = json["firstimage"];
     _firstimage2 = json["firstimage2"];
-    _mapx = json["mapx"];
-    _mapy = json["mapy"];
+    if (json["mapx"] is double) {
+      _mapx = json["mapx"] as double;
+    } else if (json["mapx"] is String){
+      _mapx = double.parse(json["mapx"]);
+    }
+    if (json["mapy"] is double) {
+      _mapx = json["mapy"] as double;
+    } else if (json["mapy"] is String){
+      _mapx = double.parse(json["mapy"]);
+    }
     _mlevel = json["mlevel"];
     _modifiedtime = json["modifiedtime"];
     _readcount = json["readcount"];

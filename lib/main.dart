@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_it_traplan/repository/course_repository.dart';
+import 'package:flutter_it_traplan/repository/tour_reports_repository.dart';
 import 'package:flutter_it_traplan/repository/tour_repository.dart';
 import 'package:flutter_it_traplan/ui/home_page/home.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
       return MultiProvider(
         providers: [
+          ChangeNotifierProvider<TourReportsRepository>(
+              create: (_) => TourReportsRepository()),
           ChangeNotifierProvider<TraplanProvider>(
               create: (_) => TraplanProvider()),
         ],child: MaterialApp(

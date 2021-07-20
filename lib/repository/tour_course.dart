@@ -234,8 +234,16 @@ class Item {
     _createdtime = json["createdtime"];
     _firstimage = json["firstimage"];
     _firstimage2 = json["firstimage2"];
-    _mapx = json["mapx"];
-    _mapy = json["mapy"];
+    if (json["mapx"] is double) {
+      _mapx = json["mapx"] as double;
+    } else if (json["mapx"] is String){
+      _mapx = double.parse(json["mapx"]);
+    }
+    if (json["mapy"] is double) {
+      _mapx = json["mapy"] as double;
+    } else if (json["mapy"] is String){
+      _mapx = double.parse(json["mapy"]);
+    }
     _mlevel = json["mlevel"];
     _modifiedtime = json["modifiedtime"];
     _readcount = json["readcount"];
